@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ROOT=$(readlink -f root)
+export ROOT
+
+for script in scripts/*; do
+	$script
+done
+
+cd $ROOT && find . | cpio -o -H newc | gzip -9 > ../system/initrd.img
