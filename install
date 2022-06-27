@@ -3,8 +3,10 @@
 ROOT=$(readlink -f root)
 export ROOT
 
+mkdir system root/bin/ root/proc/
+
 for script in scripts/*; do
-	$script
+    $script
 done
 
-cd $ROOT && find . | cpio -o -H newc | gzip -9 > ../system/initrd.img
+cd "$ROOT" && find . | cpio -o -H newc | gzip -9 > ../system/initrd.img
