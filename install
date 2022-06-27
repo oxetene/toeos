@@ -3,7 +3,7 @@
 ROOT=$(readlink -f root)
 export ROOT
 
-mkdir system root/bin/ root/proc/
+mkdir -p system root/bin/ root/proc/
 
 for script in scripts/*; do
     $script

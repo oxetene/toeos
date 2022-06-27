@@ -5,6 +5,6 @@ cd "$ROOT"/bin/ || exit
 	chmod +x ./toybox
 
 	for program in $(./toybox); do
-		ln -fsv /bin/toybox $program;
+		ln -fs /bin/toybox $program;
 	done
 cd .. || exit
